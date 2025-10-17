@@ -4,7 +4,614 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paras | Cloud & DevOps Engineer</title>
     
+    <script src="https://cdn.tailwindcss.com"></script><!DOCTYPE html>
+<html lang="en" class="light"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paras Sharma | Cloud & DevOps Engineer</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define global variables and default styles for LIGHT MODE (White/Green) */
+        :root {
+            --color-primary: #00A36C; /* Professional Deep Green Accent */
+            --color-secondary: #008060; /* Darker Green Highlight */
+            --color-light: #FFFFFF; /* Pure White Background */
+            --color-text: #171717; /* Near Black Text */
+            --color-background-card: #F9FAFB; /* Off-White Card */
+            --color-border: rgba(0, 163, 108, 0.2); 
+            --color-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        /* DARK MODE Overrides (Deep Navy/Green) */
+        .dark {
+            --color-primary: #38A169; /* Lighter Green Accent for Dark Mode */
+            --color-secondary: #059263; /* Medium Green Highlight */
+            --color-light: #0D1117; /* Deep Charcoal/Navy Background */
+            --color-text: #E5E7EB; /* Light Gray Text */
+            --color-background-card: #161B22; /* Darker Card */
+            --color-border: rgba(56, 161, 105, 0.2);
+            --color-shadow: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-text);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            transition: background-color 0.4s, color 0.4s; 
+        }
+        
+        /* Glassmorphism Effect for Header */
+        .glass-header {
+            background-color: var(--color-background-card);
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        /* Glassmorphism Effect for Cards */
+        .professional-card {
+            background: var(--color-background-card); 
+            border: 1px solid var(--color-border);
+            /* Slightly transparent background for the glass look */
+            background-color: rgba(255, 255, 255, 0.85); 
+            box-shadow: 0 8px 32px var(--color-shadow);
+            border-radius: 0.75rem; 
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Dark Mode Glassmorphism Override */
+        .dark .professional-card {
+             background-color: rgba(22, 27, 34, 0.85); 
+        }
+
+        .professional-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 40px var(--color-shadow);
+            transform: translateY(-4px);
+        }
+
+        /* Hero Text Animation */
+        .typing-effect::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        /* Timeline Styling */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: var(--color-border);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            padding-right: 20px;
+            float: left;
+            clear: left;
+            opacity: 0; 
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .timeline-item:nth-child(even) {
+            padding-left: 20px;
+            padding-right: 0;
+            float: right;
+            clear: right;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 6px;
+            right: -10px; 
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-background-card);
+            border: 3px solid var(--color-primary);
+            z-index: 10;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -10px; 
+            right: auto;
+        }
+
+        /* Mobile adjustments: Single column timeline */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 40px;
+                padding-right: 0;
+                float: none;
+                clear: both;
+            }
+            .timeline-item:nth-child(even) {
+                padding-left: 40px;
+                padding-right: 0;
+                float: none;
+                clear: both;
+            }
+            .timeline-icon,
+            .timeline-item:nth-child(even) .timeline-icon {
+                left: 10px;
+                right: auto;
+            }
+        }
+        
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body class="bg-light text-text"> 
+    <header class="sticky top-0 left-0 w-full z-50 glass-header transition duration-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-extrabold tracking-tight text-[var(--color-text)] hover:text-[var(--color-primary)] transition duration-300">
+                <span class="text-[var(--color-primary)]">Paras</span> Sharma
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="text-[var(--color-text)] hover:text-[var(--color-primary)] transition duration-300">About & Skills</a>
+                <a href="#experience" class="text-[var(--color-text)] hover:text-[var(--color-primary)] transition duration-300">Career Trajectory</a>
+                <a href="#projects" class="text-[var(--color-text)] hover:text-[var(--color-primary)] transition duration-300">Key Projects</a>
+                <a href="#education" class="text-[var(--color-text)] hover:text-[var(--color-primary)] transition duration-300">Education</a>
+                <a href="#contact" class="text-[var(--color-text)] hover:text-[var(--color-primary)] transition duration-300">Contact</a>
+            </nav>
+            
+            <button id="theme-toggle" class="p-2 rounded-full text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition duration-300 ml-4" aria-label="Toggle Dark/Light Mode">
+                <svg id="sun-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="moon-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+
+    <section id="hero" class="relative min-h-screen flex items-center justify-center p-4 pt-24 bg-[var(--color-light)] transition duration-400">
+        <div class="relative z-10 max-w-7xl w-full mx-auto grid md:grid-cols-12 gap-12 items-center">
+            
+            <div class="md:col-span-7 space-y-6">
+                <p class="text-lg font-medium uppercase tracking-widest text-[var(--color-primary)] reveal-item" data-delay="0.1">
+                    Hi, I'm Paras Sharma
+                </p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-[var(--color-text)] leading-tight reveal-item" data-delay="0.2">
+                    Cloud & DevOps Engineer
+                </h1>
+                
+                <h2 class="text-2xl sm:text-3xl font-light text-gray-600 dark:text-gray-300 reveal-item" data-delay="0.3">
+                    <span class="typing-effect text-[var(--color-primary)] font-mono" id="typing-text"></span>
+                </h2>
+                
+                <p class="text-lg text-gray-700 dark:text-gray-400 max-w-xl reveal-item" data-delay="0.4">
+                    Specializing in scalable deployments, CI/CD pipeline automation, and leveraging AWS and Azure to build robust, high-impact cloud infrastructure solutions.
+                </p>
+
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8 reveal-item" data-delay="0.5">
+                    <a href="#projects" class="inline-block">
+                        <button class="bg-[var(--color-primary)] text-white font-semibold px-8 py-3 rounded-lg shadow-lg shadow-[var(--color-primary)]/20 hover:bg-[var(--color-secondary)] transition duration-300">
+                            Explore Projects
+                        </button>
+                    </a>
+
+                    <a href="cloud devops resume.pdf" download="Paras_Sharma_DevOps_CV.pdf" 
+                        class="inline-flex justify-center items-center text-lg font-semibold px-8 py-3 rounded-lg border-2 border-[var(--color-primary)] text-[var(--color-text)] hover:bg-[var(--color-primary)] hover:text-white transition duration-300">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 flex justify-center md:justify-end reveal-item" data-delay="0.6">
+                <div class="p-1 border border-[var(--color-primary)]/20 rounded-xl shadow-2xl shadow-gray-300 dark:shadow-gray-900 transition duration-500 ease-in-out">
+                    <img 
+                        src="my pic.jpg" 
+                        alt="Paras - Cloud DevOps Engineer" 
+                        class="rounded-xl w-64 h-64 sm:w-80 sm:h-80 object-cover object-center border-4 border-white dark:border-gray-800"
+                    >
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="absolute bottom-10 z-10 p-2 rounded-full border border-gray-400 dark:border-gray-600 text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition duration-300" aria-label="Scroll Down">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+    </section>
+
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-32">
+
+        <section id="about" class="space-y-12">
+            <h3 class="text-3xl font-bold text-[var(--color-primary)] border-b pb-3 border-[var(--color-border)] reveal-item">
+                01. About Me & Core Skills
+            </h3>
+            
+            <div class="grid md:grid-cols-12 gap-12">
+                
+                <div class="md:col-span-5 space-y-4 text-lg text-gray-700 dark:text-gray-300 reveal-item">
+                    <p class="text-2xl font-semibold text-[var(--color-text)]">A Focus on Automation</p>
+                    <p class="leading-relaxed">
+                        A dedicated Cloud and DevOps Engineer with hands-on proficiency in Linux, AWS, Azure, Docker, and Jenkins. I currently combine my academic pursuit in Computer Science with real-world application, specializing in deploying scalable three-tier applications.
+                    </p>
+                    <p class="leading-relaxed">
+                        My primary focus is on implementing robust CI/CD pipelines and using Infrastructure as Code (IaC) principles to turn technical innovation into efficient, high-impact deployment solutions.
+                    </p>
+                </div>
+
+                <div class="md:col-span-7 reveal-item" data-delay="0.2">
+                    <p class="text-2xl font-semibold text-[var(--color-text)] mb-6">Technical Expertise</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <div class="professional-card p-4 flex flex-col items-start space-y-2">
+                            <span class="text-base font-semibold text-[var(--color-text)]">Cloud & Infrastructure</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">AWS, Azure, Linux</span>
+                        </div>
+                        <div class="professional-card p-4 flex flex-col items-start space-y-2">
+                            <span class="text-base font-semibold text-[var(--color-text)]">DevOps & CI/CD</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Docker, Jenkins, Git</span>
+                        </div>
+                        <div class="professional-card p-4 flex flex-col items-start space-y-2">
+                            <span class="text-base font-semibold text-[var(--color-text)]">IaC & Automation</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Ansible, Terraform (Concepts)</span>
+                        </div>
+                        <div class="professional-card p-4 flex flex-col items-start space-y-2">
+                            <span class="text-base font-semibold text-[var(--color-text)]">Programming</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">C/C++, Python</span>
+                        </div>
+                        <div class="professional-card p-4 flex flex-col items-start space-y-2">
+                            <span class="text-base font-semibold text-[var(--color-text)]">Web Development</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Node.js, Express.js, MongoDB</span>
+                        </div>
+                        <div class="professional-card p-4 flex flex-col items-start space-y-2">
+                            <span class="text-base font-semibold text-[var(--color-text)]">Monitoring & Testing</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Postman, Nginx, PM2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr class="border-gray-200 dark:border-gray-800">
+
+        
+        <section id="experience" class="space-y-12">
+            <h3 class="text-3xl font-bold text-[var(--color-primary)] border-b pb-3 border-[var(--color-border)] reveal-item">
+                02. Career Trajectory & Internships
+            </h3>
+
+            <div class="timeline">
+                
+                <div class="timeline-item translate-x-10" data-direction="right">
+                    <div class="timeline-icon"></div>
+                    <div class="professional-card p-6">
+                        <div class="flex items-center justify-between text-sm">
+                            <p class="font-bold text-lg text-[var(--color-text)]">Cloud Trainee (Azure, AWS)</p>
+                            <span class="text-xs font-mono text-[var(--color-primary)]">06/2024 - 07/2024</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">07 Services, Jalandhar, Punjab</p>
+                        <ul class="list-disc list-outside space-y-1 ml-5 text-sm text-gray-600 dark:text-gray-300">
+                            <li>Deployed and managed a three-tier application across AWS and Azure using Nginx and PM2.</li>
+                            <li>Implemented custom domain names and ensured reliable, high-availability hosting.</li>
+                            <li>Utilized GitHub for version control, managing code deployments to the Apache server environment.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item translate-x-10" data-direction="left">
+                    <div class="timeline-icon"></div>
+                    <div class="professional-card p-6">
+                         <div class="flex items-center justify-between text-sm">
+                            <p class="font-bold text-lg text-[var(--color-text)]">Cloud Trainee (AWS, S3, IAM)</p>
+                            <span class="text-xs font-mono text-[var(--color-primary)]">06/2023 - 08/2023</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Techcadd IT Solutions, Jalandhar, Punjab</p>
+                        <ul class="list-disc list-outside space-y-1 ml-5 text-sm text-gray-600 dark:text-gray-300">
+                            <li>Gained fundamental experience with AWS services, including S3 for storage and IAM for user access management.</li>
+                            <li>Practiced basic Git workflow and deployed applications to virtual machines via Nginx.</li>
+                            <li>Conducted local testing and validation of web projects using Express.js development server.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div> 
+        </section>
+        
+        <hr class="border-gray-200 dark:border-gray-800">
+
+
+        <section id="projects" class="space-y-12">
+            <h3 class="text-3xl font-bold text-[var(--color-primary)] border-b pb-3 border-[var(--color-border)] reveal-item">
+                03. Key Projects & Deliverables
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="professional-card p-6 space-y-4 reveal-item" data-delay="0.1">
+                    <div class="text-4xl font-extrabold text-[var(--color-primary)]">
+                        <svg class="w-8 h-8 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        MERN Stack
+                    </div>
+                    <h4 class="text-xl font-bold text-[var(--color-text)]">Full-Stack MERN App Prototype</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        Developed a feature-rich prototype (Tours & Travels site) utilizing the MERN stack. Managed data persistence with MongoDB and built a responsive API backend using Node.js and Express.js.
+                    </p>
+                </div>
+
+                <div class="professional-card p-6 space-y-4 reveal-item" data-delay="0.2">
+                    <div class="text-4xl font-extrabold text-[var(--color-primary)]">
+                        <svg class="w-8 h-8 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        CI/CD Flow
+                    </div>
+                    <h4 class="text-xl font-bold text-[var(--color-text)]">Containerized Jenkins Pipeline</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        Automated the build and deployment process for a Python application by implementing Dockerization and establishing a full CI/CD pipeline using Jenkins for seamless integration and deployment.
+                    </p>
+                </div>
+
+                <div class="professional-card p-6 space-y-4 reveal-item" data-delay="0.3">
+                    <div class="text-4xl font-extrabold text-[var(--color-primary)]">
+                        <svg class="w-8 h-8 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-4 1V5c0-1.1.9-2 2-2h2c.67 0 1.25.33 1.5.83l.66 1.1c.3.5.8.84 1.34.84h2.5c.54 0 1.04-.34 1.34-.84l.66-1.1c.25-.5.83-.83 1.5-.83h2c1.1 0 2 .9 2 2v15l-4-1-1.3-.75"></path></svg>
+                        Gitea Server
+                    </div>
+                    <h4 class="text-xl font-bold text-[var(--color-text)]">Private Git Server Deployment</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        Successfully deployed a secure, self-hosted version control solution using Gitea. Utilized Nginx as a reverse proxy and configured MariaDB for robust database management.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <hr class="border-gray-200 dark:border-gray-800">
+
+
+        <section id="education" class="space-y-12">
+            <h3 class="text-3xl font-bold text-[var(--color-primary)] border-b pb-3 border-[var(--color-border)] reveal-item">
+                04. Education & Certifications
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <div class="space-y-6 reveal-item">
+                    <p class="text-2xl font-semibold text-[var(--color-text)]">Academic History</p>
+                    
+                    <div class="professional-card p-6">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-xl font-bold text-[var(--color-text)]">B.Tech - Computer Science</h4>
+                            <span class="text-xs font-mono text-gray-500 dark:text-gray-400">06/2022 - Present</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">GNA UNIVERSITY | Phagwara, Punjab</p>
+                        <p class="text-sm text-[var(--color-primary)] font-medium mt-2">Current CGPA: 7.68</p>
+                    </div>
+                    
+                    <div class="professional-card p-6">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-xl font-bold text-[var(--color-text)]">High School (10+2)</h4>
+                            <span class="text-xs font-mono text-gray-500 dark:text-gray-400">04/2017 - 03/2019</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">ROSE PUBLIC SCHOOL | Nurpur, Kangra</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 reveal-item" data-delay="0.2">
+                    <p class="text-2xl font-semibold text-[var(--color-text)]">Focus & Future Goals</p>
+                    <div class="professional-card p-6 space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <h4 class="text-xl font-bold text-[var(--color-text)]">Infrastructure Automation</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Deepening knowledge of Terraform for declarative cloud provisioning and Ansible for configuration management to streamline infrastructure setup across multi-cloud environments.
+                        </p>
+                    </div>
+
+                    <div class="professional-card p-6 space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <h4 class="text-xl font-bold text-[var(--color-text)]">Cloud Security & Monitoring</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Planning for AWS and Azure certifications with a focus on core compute/networking services and best practices in security and cost-optimization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr class="border-gray-200 dark:border-gray-800">
+
+
+        <section id="contact" class="text-center py-20 space-y-8 reveal-item">
+            <h3 class="text-3xl font-bold text-[var(--color-primary)] border-b pb-3 border-[var(--color-border)] mx-auto w-fit">
+                05. Get In Touch
+            </h3>
+            
+            <h2 class="text-4xl sm:text-5xl font-black text-[var(--color-text)] max-w-3xl mx-auto leading-snug">
+                Let's Build & Automate Something Great.
+            </h2>
+            <p class="text-lg text-gray-700 dark:text-gray-400 max-w-2xl mx-auto">
+                I'm actively seeking entry-level Cloud or DevOps roles. Feel free to connect to discuss potential opportunities or collaborations.
+            </p>
+
+            <a href="mailto:parassharrmaaa@gmail.com?subject=DevOps%20Opportunity%20from%20Portfolio" class="inline-block pt-4">
+                <button class="bg-[var(--color-primary)] text-white font-semibold px-10 py-4 rounded-lg uppercase tracking-wider shadow-lg hover:bg-[var(--color-secondary)] transition duration-300 hover:scale-[1.03]">
+                    Say Hello Via Email
+                </button>
+            </a>
+            
+            <div class="flex justify-center space-x-6 pt-8">
+                <a href="mailto:parassharrmaaa@gmail.com" target="_blank" class="text-gray-500 hover:text-[var(--color-primary)] transition duration-300" aria-label="Email: parassharrmaaa@gmail.com">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2z"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/paraas" target="_blank" class="text-gray-500 hover:text-[var(--color-primary)] transition duration-300" aria-label="LinkedIn profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.518-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://github.com/paras9069" target="_blank" class="text-gray-500 hover:text-[var(--color-primary)] transition duration-300" aria-label="GitHub profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.28-.01-1.017-.01-2.002-3.337.724-4.043-1.61-4.043-1.61-.546-1.387-1.332-1.756-1.332-1.756-1.087-.74.083-.725.083-.725 1.205.085 1.838 1.238 1.838 1.238 1.07 1.834 2.808 1.303 3.491.995.109-.775.421-1.303.766-1.605-2.665-.304-5.466-1.334-5.466-5.932 0-1.31.467-2.383 1.235-3.22-.124-.303-.535-1.52.117-3.18 0 0 1-.32 3.298 1.23.957-.266 1.983-.4 3.003-.404 1.02.004 2.046.138 3.003.404 2.298-1.55 3.298-1.23 3.298-1.23.652 1.66.24 2.877.118 3.18.77.837 1.233 1.91 1.233 3.22 0 4.59-2.805 5.626-5.475 5.922.43.37.82.903.82 1.82 0 1.31-.01 2.378-.01 2.704 0 .318.22.69.825.577C20.565 21.801 24 17.306 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd"/></svg>
+                </a>
+            </div>
+            
+        </section>
+    </main>
+    
+    <footer class="text-center py-6 text-gray-500 text-xs border-t border-gray-200 dark:border-gray-800 transition duration-300">
+        &copy; 2025 Paras Sharma. Built with a focus on Clean Code and Automation.
+    </footer>
+
+
+<script>
+    const TYPING_TEXT = ["Cloud Infrastructure Architect", "CI/CD Automation Specialist", "Linux & Containerization Expert"];
+    let textIndex = 0;
+    let charIndex = 0;
+    const typingElement = document.getElementById('typing-text');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body.parentElement; // HTML element
+
+    // 1. Typing Effect Logic
+    function type() {
+        if (charIndex < TYPING_TEXT[textIndex].length) {
+            typingElement.textContent += TYPING_TEXT[textIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 80); 
+        } else {
+            setTimeout(erase, 2500);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            typingElement.textContent = TYPING_TEXT[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 40);
+        } else {
+            textIndex = (textIndex + 1) % TYPING_TEXT.length;
+            setTimeout(type, 500);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typingElement) {
+            setTimeout(type, 1000); // Start the typing animation
+        }
+
+        // Initialize Theme Mode
+        const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark');
+            body.classList.remove('light');
+        } else {
+            body.classList.add('light');
+            body.classList.remove('dark');
+        }
+        updateThemeIcons(currentTheme);
+        
+        // Setup Scroll Reveal
+        setupScrollReveal();
+    });
+
+    // 2. Dark/Light Mode Toggle Logic
+    function updateThemeIcons(theme) {
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        if (sunIcon && moonIcon) {
+            if (theme === 'dark') {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = body.classList.contains('dark');
+        
+        if (isDark) {
+            body.classList.remove('dark');
+            body.classList.add('light');
+            localStorage.setItem('theme', 'light');
+            updateThemeIcons('light');
+        } else {
+            body.classList.remove('light');
+            body.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            updateThemeIcons('dark');
+        }
+    });
+
+    // 3. Scroll Reveal Animation Logic (for a polished look)
+    function setupScrollReveal() {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const item = entry.target;
+                    const delay = parseFloat(item.getAttribute('data-delay') || 0);
+                    
+                    setTimeout(() => {
+                        item.classList.add('reveal-visible');
+                    }, delay * 1000);
+                    
+                    observer.unobserve(item);
+                }
+            });
+        }, {
+            threshold: 0.1 
+        });
+
+        document.querySelectorAll('.reveal-item, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Specific timeline animation logic
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const item = entry.target;
+                    const direction = item.getAttribute('data-direction');
+                    
+                    // Simple fade and slide-in for timeline
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                    timelineObserver.unobserve(item);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.timeline-item').forEach(el => {
+            timelineObserver.observe(el);
+        });
+    }
+
+</script>
+</body>
+</html>
     
     <style>
         /* Define global variables and default styles for DARK MODE */
@@ -690,3 +1297,4 @@
 
 </body>
 </html>
+
